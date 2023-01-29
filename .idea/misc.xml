@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidSourceCode/WisTHEN/app/src/main/res/layout/activity_chat.xml" value="0.25364583333333335" />
         <entry key="..\:/AndroidSourceCode/WisTHEN/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/AndroidSourceCode/WisTHEN/app/src/main/res/layout/row_chat.xml" value="0.25364583333333335" />
       </map>
     </option>
   </component>
