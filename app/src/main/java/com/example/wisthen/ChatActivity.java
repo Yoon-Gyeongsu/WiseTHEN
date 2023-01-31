@@ -1,5 +1,6 @@
 package com.example.wisthen;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -25,12 +26,24 @@ import java.util.List;
 
 
 public class ChatActivity extends AppCompatActivity {
+    // 파이어베이스 데이터베이스 연동
+    // private FirebaseDatabase database = FirebaseDatabase.getInstance();
+
+    //DatabaseReference는 데이터베이스의 특정 위치로 연결하는 거라고 생각하면 된다.
+    //현재 연결은 데이터베이스에만 딱 연결해놓고
+    //키값(테이블 또는 속성)의 위치 까지는 들어가지는 않은 모습이다.
+    // private DatabaseReference databaseReference = database.getReference();
+
+    //databaseReference.child("zoo").child(name).setValue(animal);
+    //FirebaseDatabase database = FirebaseDatabase.getInstance();
+    //DatabaseReference myRef = database.getReference("message");
+    //myRef.setValue("Hello, World!");
 
     private RecyclerView mRecyclerView;
     public  RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private List<ChatData> chatList;
-    private String nick = "nick2";
+    private String nick = "";
 
     private EditText EditText_chat;
     private Button Button_send;
@@ -41,6 +54,9 @@ public class ChatActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
 
+        Intent intent = getIntent();
+        String str = str = intent.getStringExtra("str");
+        nick = str;
 
         Button_send = findViewById(R.id.Button_send);
         EditText_chat = findViewById(R.id.EditText_chat);
@@ -49,6 +65,7 @@ public class ChatActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String msg = EditText_chat.getText().toString(); //msg
+                EditText_chat.setText("");
 
                 if(msg != null) {
                     ChatData chat = new ChatData();

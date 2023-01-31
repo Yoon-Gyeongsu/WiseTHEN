@@ -4,18 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="horizontal"
+    android:gravity="center"
+    >
 
     <EditText
-        android:id="@+id/edit1"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"></EditText>
-
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="이름 입력"
+        android:textSize="40dp"
+        android:id="@+id/EditText_main"
+        />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/btn"
-        android:text="추가하기" />
+        android:text="시작"
+        android:id="@+id/btn_main"
+        />
 
 </LinearLayout>
